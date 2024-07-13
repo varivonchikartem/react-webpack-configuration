@@ -1,16 +1,17 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
 import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BuildOptions } from "./types/configuration";
 
-export function buildPlugins(options:BuildOptions): webpack.WebpackPluginInstance[] {
-
-    const {paths} = options
-
+export function buildPlugins({ paths, isDevelopment }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
     new webpack.ProgressPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[contenthash:8].css",
+      chunkFilename: "css/[name].[contenthash:8].css",
+    }),
   ];
 }

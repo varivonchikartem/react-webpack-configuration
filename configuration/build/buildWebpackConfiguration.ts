@@ -1,17 +1,16 @@
 import webpack from "webpack";
 import path from "path";
-
-import { BuildOptions } from "./types/configuration";
 import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import { buildDevelopmentServer } from "./buildDevelopmentServer";
+import { BuildOptions } from "./types/configuration";
 
 export function buildWebpackConfiguration(options: BuildOptions): webpack.Configuration {
-  const { mode, paths, isDevelopment } = options;
+  const { paths, mode, isDevelopment } = options;
 
   return {
-    mode: mode,
+    mode,
     entry: paths.entry,
     output: {
       filename: "[name].[contenthash].js",
@@ -20,7 +19,7 @@ export function buildWebpackConfiguration(options: BuildOptions): webpack.Config
     },
     plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolvers(),
     devtool: isDevelopment ? "inline-source-map" : undefined,
