@@ -1,12 +1,13 @@
 * {
-  color: var(--text-color);
+  color: #efefef;
 }
 
 body {
   font-family: var(--font-family-base);
   @include fluid-text(14, 14.5);
 
-  background-color: var(--background-color);
+  background-color: rgba(17, 17, 17, 1);
+  height: 100vh;
 }
 
 h1,
@@ -91,11 +92,4 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
-}
-
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
