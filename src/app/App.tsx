@@ -1,7 +1,7 @@
 import React from "react";
 import clx from "classnames";
 import styles from "./App.module.scss";
-import LightIcon from "../shared/assets/icons/ThemeSwitcherLightIcon.svg";
+import LightIcon from "@/shared/assets/icons/ThemeSwitcherLightIcon.svg";
 
 interface AppProps {
   className?: string;
