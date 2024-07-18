@@ -70,16 +70,16 @@ const App: React.FC<AppProps> = (props) => {
 
   return (
     <main className={appClasses}>
-      <h1>Advanced Webpack Configuration Overview</h1>
-      <section>
-        <ul>
+      <h1 className={styles.title}>Advanced Webpack Configuration Overview</h1>
+      <section className={styles.stepsSection}>
+        <ul className={styles.stepsList}>
           {setupSteps.map((step, index) => (
-            <li key={index}>
-              <h2>{step.title}</h2>
-              <ul>
+            <li key={index} className={styles.stepItem}>
+              <h2 className={styles.stepTitle}>{step.title}</h2>
+              <ul className={styles.substepsList}>
                 {step.substeps.map((substep, subIndex) => (
-                  <li key={subIndex}>
-                    <h3>{substep}</h3>
+                  <li key={subIndex} className={styles.substepItem}>
+                    <h3 className={styles.substepText}>{substep}</h3>
                   </li>
                 ))}
               </ul>

@@ -1,0 +1,81 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+$text-color: #343a40;
+$border-color: #dee2e6;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$font-family: "Roboto", sans-serif;
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+
+  min-height: 100vh;
+  font-family: $font-family;
+  color: $text-color;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: $primary-color;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.stepsSection {
+  width: 100%;
+  max-width: 800px;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+}
+
+.stepItem {
+  background-color: #ffffff;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px $shadow-color;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px $shadow-color;
+  }
+}
+
+.stepTitle {
+  font-size: 1.75rem;
+  color: $secondary-color;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.substepsList {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.substepItem {
+  margin-bottom: 10px;
+}
+
+.substepText {
+  font-size: 1.25rem;
+  color: $text-color;
+  font-weight: 300;
+}
+
+.substepText::before {
+  content: "•";
+  color: $primary-color;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
